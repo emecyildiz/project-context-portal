@@ -1,0 +1,86 @@
+site_name: Project Context Portal
+site_description: Your project, its architecture, decisions, progress, and evidence in one place.
+docs_dir: docs
+site_dir: site
+watch:
+  - scripts/mkdocs_hooks.py
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - toc.follow
+    - search.suggest
+    - search.highlight
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+plugins:
+  - search
+hooks:
+  - scripts/mkdocs_hooks.py
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+extra_css:
+  - stylesheets/portal.css
+nav:
+  - Home: index.md
+  - Control Center:
+      - Overview: control-center/index.md
+      - Current State: CURRENT_STATE.md
+      - Work Log: control-center/WORK_LOG.md
+      - Evidence: evidence/index.md
+  - Project:
+      - Context: PROJECT_CONTEXT.md
+      - Document Map: DOCUMENTATION_MAP.md
+      - Glossary: GLOSSARY.md
+  - Product:
+      - Overview: product/index.md
+      - Hypotheses: product/HYPOTHESES.md
+  - Architecture:
+      - Overview: architecture/index.md
+      - System Map: architecture/SYSTEM_MAP.md
+      - Data and Flows: architecture/DATA_AND_FLOWS.md
+      - Boundaries and Risks: architecture/BOUNDARIES.md
+  - Planning:
+      - Roadmap: planning/index.md
+      - Work Board: planning/WORK_BOARD.md
+      - Risks: planning/RISKS.md
+  - Decisions:
+      - Decision Index: decisions/index.md
+  - Discovery:
+      - Open Questions: discovery/index.md
+      - Assumptions: discovery/ASSUMPTIONS.md
+      - Research: research/index.md
+  - Guide:
+      - Getting Started: guide/index.md
+      - AI Workflow: guide/AI_WORKFLOW.md
+      - Personalization: guide/PERSONALIZATION.md
+      - Fictional Example: guide/EXAMPLE.md
+      - Limitations: guide/LIMITATIONS.md
