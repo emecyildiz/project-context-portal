@@ -19,6 +19,11 @@ class ReaderCatalogTests(unittest.TestCase):
         self.assertEqual(e['summary'], 'Hello reader .')
         self.assertEqual(e['change_summary'], 'Added review controls')
 
+    def test_real_heading_distinguishes_repeated_overview_nav_labels(self):
+        e = reader.page_entry('architecture/index.md', 'architecture/', 'Overview',
+                              '<h1>Architecture<a href="#architecture">¶</a></h1><p>Design notes</p>', {})
+        self.assertEqual(e['title'], 'Architecture')
+
     def test_content_and_dependency_changes_change_hash(self):
         args = ('a.md', 'a/', 'A', '<p>Same page</p>', {})
         a = reader.page_entry(*args, [b'old JSON'])

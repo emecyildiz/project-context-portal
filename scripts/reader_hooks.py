@@ -56,6 +56,9 @@ def validate_settings(settings):
 
 def page_entry(source, url, title, content, meta, dependencies=()):
     safe_path(source)
+    heading = re.search(r'<h1\b[^>]*>(.*?)</h1>', content, flags=re.S)
+    if heading:
+        title = PlainText(heading.group(1)).text().rstrip('¶').strip() or title
     summary = meta.get('review_summary')
     change = meta.get('change_summary', '')
     if summary is not None and not isinstance(summary, str) or not isinstance(change, str):

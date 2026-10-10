@@ -14,7 +14,7 @@ Source contract: unique/stable project identity in configuration; public rendere
 
 The first-use project CURRENT_STATE and work log remain blank. Toolkit verification and publication are recorded here, not invented as application accomplishments. Current validation is documented in [the new verification record](verification/2026-10-10.md).
 
-Windows / Python 3.12.14 / Node 26.4.0: 28 Python tests and 12 pure JavaScript logic tests passed; fresh local setup, content checks and strict build passed. Selected English/Turkish desktop/mobile reader and failure-case browser observations are recorded with limitations in [result-0.2.json](verification/result-0.2.json). These are toolkit checks, not tests of your application. Source push is not a hosting deployment or a release tag.
+Windows / Python 3.12.14 / Node 26.4.0: 29 Python tests and 12 pure JavaScript logic tests passed; fresh local setup, content checks and strict build passed. The final reader-title regression distinguishes actual page headings from repeated navigation labels such as Overview. Selected English/Turkish desktop/mobile reader and failure-case browser observations are recorded with limitations in [result-0.2.json](verification/result-0.2.json). These are toolkit checks, not tests of your application. Source push is not a hosting deployment or a release tag.
 
 ## v0.1.0 — Initial record (2026-10-05)
 
