@@ -15,6 +15,8 @@
 
 ## Explore your project
 
+[What changed since my saved baseline? / My review list](review/index.md)
+
 <div class="portal-grid">
 <a class="portal-card portal-card-featured" href="control-center/"><strong>Control center</strong><span>Active work, what is known, and the next small step.</span></a>
 <a class="portal-card" href="product/"><strong>Product &amp; purpose</strong><span>The problem, users, and hypotheses to test.</span></a>

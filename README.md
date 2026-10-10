@@ -19,6 +19,7 @@ The assistant needs file/repository and terminal access. A chat-only model can g
 - Proposed / Validating / Implemented / Verified / Deferred / Rejected distinctions.
 - Provider-neutral agent runbook and optional private communication preferences.
 - One Python command for setup, checks, build, and serving.
+- A private review center: compare page versions to an explicit saved baseline; mark pages to review, read, not understood, or ask your AI.
 - An explicitly fictional example, separate from your project's real state.
 
 No AI API key, hosted database, or provider SDK is needed by the portal. Your chosen coding assistant operates outside it.
@@ -50,6 +51,14 @@ The starter is English. Agents can translate project documents and set the theme
 
 This is a documentation portal, not an autonomous manager. It does not import all chats, edit tasks in the browser, run application tests, or enforce agent obedience. People/agents must maintain the documents. Passing a portal build does not verify the user's application.
 
+## Changes and personal review
+
+The review center compares the current **built documentation catalog** with your explicitly saved browser baseline. First use does not invent previous visits. Page introductions and optional author-written change notes are not automatic semantic diffs. Reading a URL does not automatically mark it read; a previously read page that changes needs another look. Acknowledging changes does not alter review marks.
+
+Review marks stay in localStorage under `extra.portal_reader.project_id` and the browser origin. Set a **stable, unique project id** during adaptation. Reusing the starter id for different projects on the same origin can mix personal marks. No telemetry, AI key, hosted account, or repository writes are involved. Local JSON export is available; import and account synchronization are not implemented. Clearing browser data can lose marks. Corrupt/unsupported saved data is not silently overwritten; blocked storage is explicitly reported as temporary.
+
+See [the reader guide](docs/guide/READER_TOOLS.md). For other languages, translate source documents and the reader labels; built-in reader UI labels currently cover English and Turkish.
+
 ## Development
 
 ~~~sh
@@ -59,6 +68,8 @@ python scripts/portal.py build
 ~~~
 
 See RELEASE.md for actual toolkit verification; portable code alone does not prove macOS/Linux execution.
+
+Optional frontend logic checks (Node.js, no extra packages): `node tests/test_reader_core.cjs`. Python tests and a portal build do not by themselves prove browser storage or scroll behavior; record browser checks separately.
 
 ## License and credits
 

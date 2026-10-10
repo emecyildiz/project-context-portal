@@ -20,5 +20,6 @@
 | Why this choice? | [Decisions](../decisions/index.md) |
 | What needs my answer? | [Open Questions](../discovery/index.md) |
 | What changed? | [Work Log](WORK_LOG.md) |
+| What changed since my review, and what needs another look? | [Changes & My Review List](../review/index.md) |
 
 This view does not execute tasks, approve changes, or continuously observe your AI.

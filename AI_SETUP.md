@@ -29,11 +29,16 @@ Setup creates .venv and downloads requirements-docs.txt. Respect install/network
 ## 5. Adapt honestly
 
 Set site_name/site_description in mkdocs.yml; change theme.language if appropriate.
+Set `extra.portal_reader.project_id` to a stable, unique project slug before reusing the portal. Do not change it casually after review marks exist; the browser origin and id isolate personal state.
 Fill PROJECT_CONTEXT.md with confirmed purpose, users, scope, and success criteria.
 Set CURRENT_STATE.md's status, updated ISO date, and phase. Its body holds active work, outcomes, unknowns, decision needs, and next step.
 Adapt product, architecture, planning, decisions, discovery, research, evidence, and glossary pages. No mandatory AI/ML, electronics, business model, or schedule.
 Keep templates and private preferences outside docs. The fictional example must remain labeled illustrative.
 Do not fill gaps with invented features, test counts, or market claims.
+
+The reader catalog is built from rendered public documentation. Optional page front matter `review_summary` is a short plain-text introduction; `change_summary` is the author's latest short change note, not a generated semantic diff. Update it when changing an important page and link longer reasoning to canonical documents/work log. Do not treat personal browser marks as confirmed project progress or automatically ingest/publish them as user instructions.
+
+For pages whose real content is a separate public artifact (for example a lazy-loaded report), declare its relative path in `extra.portal_reader.dependencies`, keyed by the source Markdown path. The build includes those bytes in the page's comparison hash; missing or outside-docs paths are rejected. Keep private data out of public docs/catalogs. [Reader tools](docs/guide/READER_TOOLS.md).
 
 If adopting inside an existing application, propose a short link in its existing agent instructions; never overwrite them. A separate portal's AGENTS.md is not automatically discovered by an agent working only in an unrelated application directory.
 

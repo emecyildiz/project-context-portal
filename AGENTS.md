@@ -23,6 +23,7 @@ After meaningful tracked-project work update affected sources, CURRENT_STATE.md,
 For reusable-toolkit development, update RELEASE.md and verification/ instead. Keep the unadapted starter's project state and work log blank; toolkit tests are not progress on a user's application.
 Significant accepted decisions need numbered ADRs. Do not silently accept open proposals.
 Evidence needs the actual command/method, date/environment, result, artifact/source, and limitations. Portal tests do not verify application claims.
+Reader marks are personal browser state, not canonical project progress. Keep `portal_reader.project_id` unique/stable, update meaningful `change_summary` notes, and never silently clear or publish personal marks. The catalog covers public documentation, not all application code/chats. Preserve explicit-baseline, changed-read-page, blocked-storage, and invalid-data behavior when extending reader tools.
 
 ## Preserve work and authority
 

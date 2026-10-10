@@ -2,8 +2,13 @@ site_name: Project Context Portal
 site_description: Your project, its architecture, decisions, progress, and evidence in one place.
 docs_dir: docs
 site_dir: site
+extra:
+  portal_reader:
+    project_id: project-context-portal-starter
+    review_page: review/index.md
 watch:
   - scripts/mkdocs_hooks.py
+  - scripts/reader_hooks.py
 theme:
   name: material
   language: en
@@ -34,6 +39,7 @@ plugins:
   - search
 hooks:
   - scripts/mkdocs_hooks.py
+  - scripts/reader_hooks.py
 markdown_extensions:
   - admonition
   - attr_list
@@ -49,10 +55,14 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 extra_css:
   - stylesheets/portal.css
+  - stylesheets/reader.css
+extra_javascript:
+  - javascripts/reader.js
 nav:
   - Home: index.md
   - Control Center:
       - Overview: control-center/index.md
+      - Changes & My Review List: review/index.md
       - Current State: CURRENT_STATE.md
       - Work Log: control-center/WORK_LOG.md
       - Evidence: evidence/index.md
@@ -84,3 +94,4 @@ nav:
       - Personalization: guide/PERSONALIZATION.md
       - Fictional Example: guide/EXAMPLE.md
       - Limitations: guide/LIMITATIONS.md
+      - Reader Tools: guide/READER_TOOLS.md
